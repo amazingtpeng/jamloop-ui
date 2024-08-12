@@ -11,7 +11,7 @@ const CampaignsTable = () => {
   const router = useRouter();
 
   useEffect(() => {
-    axios.get(`https://campaign.free.beeceptor.com/api/campaigns/`)
+    axios.get(`https://jamloop.free.beeceptor.com/api/campaigns/`)
       .then(res => setCampaigns(res.data.filter(item => item.accountId === user.username)))
       .catch(err => console.error(err));
   }, [user]);

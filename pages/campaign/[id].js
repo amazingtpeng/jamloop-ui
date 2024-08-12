@@ -23,7 +23,7 @@ const CampaignEditPage = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`https://campaign.free.beeceptor.com/api/campaigns/${id}`)
+      axios.get(`https://jamloop.free.beeceptor.com/api/campaigns/${id}`)
         .then(res => setCampaign(res.data))
         .catch(err => console.error(err));
     }
@@ -32,7 +32,7 @@ const CampaignEditPage = () => {
   const handleSubmit = (data) => {
     if (id) {
       const accountAddedData = { ...data, accountId: user.username };
-      axios.put(`https://campaign.free.beeceptor.com/api/campaigns/${id}`, accountAddedData)
+      axios.put(`https://jamloop.free.beeceptor.com/api/campaigns/${id}`, accountAddedData)
         .then(() => router.push('/campaigns'))
         .catch(err => console.error(err));
     }

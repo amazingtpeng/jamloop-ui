@@ -9,15 +9,12 @@ const ProtectedRoute = ({ children }) => {
 
   useEffect(() => {
     // Ensure this code only runs client-side
-    if (user === undefined) {
-      router.push('/login');
-    }
+    setTimeout(() => {  
+      if (!user) {
+        router.push('/login');
+      }
+    }, 500);
   }, [user, router]);
-
-  // Render children only if user is present
-  if (!user) {
-    return null; // Or return a loading spinner, etc.
-  }
 
   return <>{children}</>;
 };

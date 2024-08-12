@@ -22,7 +22,7 @@ const CampaignCreatePage = () => {
 
   const handleSubmit = (data) => {
     const accountAddedData = { ...data, accountId: user.username };
-    axios.post(`https://campaign.free.beeceptor.com/api/campaigns`, accountAddedData)
+    axios.post(`https://jamloop.free.beeceptor.com/api/campaigns`, accountAddedData)
     .then(() => router.push('/campaigns'))
     .catch(err => console.error(err));
   };
